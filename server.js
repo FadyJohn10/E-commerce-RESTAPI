@@ -5,6 +5,7 @@ const morgan = require('morgan');
 // importing functions
 const dbConnection = require('./config/database');
 const categoryRoute = require('./routes/categoryRoute');
+const subCategoryRoute = require('./routes/subCategoryRoute');
 
 // initiating app
 const app = express();
@@ -25,4 +26,5 @@ app.listen(process.env.PORT, ()=>{
 })
 
 //Routes
-app.use('/', categoryRoute);
+app.use('/cat', categoryRoute);
+app.use('/subcat', subCategoryRoute);
